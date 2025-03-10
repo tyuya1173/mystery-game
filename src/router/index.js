@@ -1,25 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import StartScreen from "../views/StartScreen.vue";
+import GameScreen from "../views/GameScreen.vue";
+import GameOverScreen from "../views/GameOverScreen.vue";
+import ClearScreen from "../views/ClearScreen.vue";
+import FinalStageScreen from "../views/FinalStageScreen.vue";
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+  { path: "/", component: StartScreen },
+  { path: "/game", component: GameScreen },
+  { path: "/gameover", component: GameOverScreen },
+  { path: "/clear", component: ClearScreen },
+  { path: "/final", component: FinalStageScreen },
+];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  history: createWebHistory(),
+  routes,
+});
 
-export default router
+export default router;
