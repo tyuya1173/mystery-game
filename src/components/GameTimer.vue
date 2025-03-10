@@ -22,6 +22,13 @@ export default {
       return `${minutes}:${seconds.toString().padStart(2, "0")}`;
     }
   },
+  watch: {
+    timeRemaining(newTime) {
+      if (newTime === 0) {
+        this.$router.push("/gameover"); // 時間切れ時にゲームオーバー画面へ遷移
+      }
+    }
+  },
   methods: {
     handleClick() {
       if (this.clickable) {

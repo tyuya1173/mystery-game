@@ -2,7 +2,7 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    timeRemaining: 90 * 60, // 1.5時間（秒単位）
+    timeRemaining: 60, // ⏳ デバッグ用に1分(60秒)に設定
     stage: 0 // 現在のステージ
   },
   mutations: {
@@ -12,7 +12,7 @@ export default createStore({
       }
     },
     resetTime(state) {
-      state.timeRemaining = 90 * 60;
+      state.timeRemaining = 60; // ⏳ タイマーを1分にリセット
     },
     nextStage(state) {
       state.stage++;
